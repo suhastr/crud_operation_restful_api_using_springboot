@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: springbootcrudoperation
-        image: dunkdock/springbootcrudoperation:latest
+        image: dunkdock/springbootcrudoperation:latest_1
         ports:
         - containerPort: 80
         env:
