@@ -26,6 +26,8 @@ WORKDIR /app
 # Copy only the built JAR from the build stage into the working directory
 COPY --from=build /app/build/libs/*.jar /app/
 
+RUN mv /app/build/libs/*.jar /app/build/libs/app.jar
+
 # Set the default command to run the application when the container starts
 ENTRYPOINT ["java","-jar","/app/app.jar"]
 
