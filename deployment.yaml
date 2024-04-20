@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-form-deployment
+  name: springbootcrudoperation-deployment
   labels:
-    app: user-form
+    app: springbootcrudoperation
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: user-form
+      app: springbootcrudoperation
   template:
     metadata:
       labels:
-        app: user-form
+        app: springbootcrudoperation
     spec:
       containers:
-      - name: user-form
-        image: dunkdock/user-form:latest_1.3
+      - name: springbootcrudoperation
+        image: dunkdock/springbootcrudoperation:latest
         ports:
         - containerPort: 80
