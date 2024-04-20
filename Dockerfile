@@ -17,9 +17,6 @@ RUN chmod +x ./gradlew
 # Build the application without running tests
 RUN ./gradlew build -x test
 
-# Rename the built JAR to app.jar (modify this if your build generates multiple JAR files)
-
-
 # Use the official OpenJDK image for a slim version of Java 17 for the run stage
 FROM openjdk:17-slim
 
