@@ -30,4 +30,4 @@ WORKDIR /app
 COPY --from=build /app/build/libs/*.jar /app/
 
 # Set the default command to run the application when the container starts
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
