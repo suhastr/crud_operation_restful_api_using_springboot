@@ -21,13 +21,29 @@ RUN ./gradlew build -x test
 
 
 # Use the official OpenJDK image for a slim version of Java 17 for the run stage
+#FROM openjdk:17-slim
+
+# Set the working directory in the Docker image for the run stage
+#WORKDIR /app
+
+# Copy only the built JAR from the build stage into the working directory
+#COPY --from=build /app/build/libs/*.jar /app/
+
+# Set the default command to run the application when the container starts
+#ENTRYPOINT ["java","-jar","app.jar"]
+
+RUN mv /app/build/libs/*.jar /app/build/libs/app.jar
+
+# Use the official OpenJDK image for a slim version of Java 17 for the run stage
 FROM openjdk:17-slim
 
 # Set the working directory in the Docker image for the run stage
 WORKDIR /app
 
 # Copy only the built JAR from the build stage into the working directory
-COPY --from=build /app/build/libs/*.jar /app/
+COPY --from=build /app/build/libs/app.jar .
 
 # Set the default command to run the application when the container starts
 ENTRYPOINT ["java","-jar","app.jar"]
+
+
