@@ -27,7 +27,7 @@ FROM openjdk:17-slim
 WORKDIR /app
 
 # Copy only the built JAR from the build stage into the working directory
-COPY --from=build /app/build/libs/*.jar /app/
+COPY --from=build /app/build/libs/*.jar app.jar
 
 # Set the default command to run the application when the container starts
 ENTRYPOINT ["java","-jar","app.jar"]
