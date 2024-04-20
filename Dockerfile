@@ -32,6 +32,10 @@ COPY --from=build /app/build/libs/*.jar /app/build/tmp/
 # Run a shell command to list files in the directory (for debugging purposes)
 RUN ls /app/build/tmp/
 
+# Rename a specific file to app.jar
+RUN mv /app/build/tmp/demo-0.0.1-SNAPSHOT.jar /app/app.jar
+
+
 
 # Set the default command to run the application when the container starts
 ENTRYPOINT ["java","-jar","/app/app.jar"]
