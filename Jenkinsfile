@@ -49,7 +49,7 @@ pipeline {
               -e "SPRING_DATASOURCE_URL=jdbc:postgresql://studentdb.cbsw4u0s2wwg.us-east-1.rds.amazonaws.com:5432/studentdb" \
               -e "SPRING_DATASOURCE_USERNAME=postgres" \
               -e "SPRING_DATASOURCE_PASSWORD=postgres" \
-              -d dunkdock/dummy_demo:latest'
+              -d dunkdock/springbootcrudoperation:latest'
         }
     }
 }
